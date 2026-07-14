@@ -146,58 +146,58 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
 <body>
 <div class="wrap">
   <header>
-    <h1>MDI Deployment Funnel <span class="badge">Commercial · Gov excluded</span></h1>
-    <p class="subtitle">Of all MDI-licensed customers — how many are deployed vs not, and among not-deployed, who already has MDE on their domain controllers.</p>
-    <p class="asof">Data as of latest daily snapshot · Licensed = MDI PAU&nbsp;&gt;&nbsp;0 · Deployed = MPU&nbsp;&gt;&nbsp;0 · MDE-on-DC = 15-day heartbeat window</p>
+    <h1>MDI Deployment Funnel <span class="badge">MDI + MDE licensed · Commercial · Gov excluded</span></h1>
+    <p class="subtitle">Of customers licensed for <strong>both MDI and MDE</strong> — how many are deployed vs not, and among not-deployed, who already has MDE on their domain controllers.</p>
+    <p class="asof">Data as of latest daily snapshot · Licensed = MDI PAU&nbsp;&gt;&nbsp;0 <strong>and</strong> MDE PAU&nbsp;&gt;&nbsp;0 · Deployed = MPU&nbsp;&gt;&nbsp;0 · MDE-on-DC = 15-day heartbeat window</p>
   </header>
 
   <div class="kpis">
     <div class="card">
-      <div class="label">Total MDI Licensed</div>
-      <div class="value" id="k-total">159,599</div>
-      <div class="pct">100% of licensed universe</div>
+      <div class="label">MDI + MDE Licensed</div>
+      <div class="value" id="k-total">144,981</div>
+      <div class="pct">100% of dual-licensed universe</div>
     </div>
     <div class="card accent">
       <div class="label">Deployed</div>
-      <div class="value" style="color:var(--cp-success)" id="k-deployed">32,682</div>
-      <div class="pct">20.48% of licensed</div>
+      <div class="value" style="color:var(--cp-success)" id="k-deployed">31,220</div>
+      <div class="pct">21.53% of licensed</div>
     </div>
     <div class="card accent">
       <div class="label">Not Deployed</div>
-      <div class="value" id="k-notdeployed">126,917</div>
-      <div class="pct">79.52% of licensed</div>
+      <div class="value" id="k-notdeployed">113,761</div>
+      <div class="pct">78.47% of licensed</div>
     </div>
   </div>
 
   <div class="panel">
-    <div class="section-title">Funnel — share of licensed universe</div>
+    <div class="section-title">Funnel — share of dual-licensed universe</div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name">Total MDI Licensed</span><span class="num">159,599 · 100%</span></div>
-      <div class="bar-track"><div class="bar-fill fill-total" style="width:100%">159,599</div></div>
+      <div class="bar-head"><span class="name">MDI + MDE Licensed</span><span class="num">144,981 · 100%</span></div>
+      <div class="bar-track"><div class="bar-fill fill-total" style="width:100%">144,981</div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name">Deployed (MPU &gt; 0)</span><span class="num">32,682 · 20.48%</span></div>
-      <div class="bar-track"><div class="bar-fill fill-deployed" style="width:20.48%">32,682</div></div>
+      <div class="bar-head"><span class="name">Deployed (MPU &gt; 0)</span><span class="num">31,220 · 21.53%</span></div>
+      <div class="bar-track"><div class="bar-fill fill-deployed" style="width:21.53%">31,220</div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name">Not Deployed</span><span class="num">126,917 · 79.52%</span></div>
-      <div class="bar-track"><div class="bar-fill fill-notdeployed" style="width:79.52%">126,917</div></div>
+      <div class="bar-head"><span class="name">Not Deployed</span><span class="num">113,761 · 78.47%</span></div>
+      <div class="bar-track"><div class="bar-fill fill-notdeployed" style="width:78.47%">113,761</div></div>
     </div>
   </div>
 
   <div class="panel">
     <div class="section-title">Not-deployed breakdown — do they already have MDE on a DC?</div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-link)"></span>With MDE on DC</span><span class="num">12,487 · 9.84% of not-deployed</span></div>
-      <div class="bar-track"><div class="bar-fill fill-mde" style="width:9.84%">12,487</div></div>
+      <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-link)"></span>With MDE on DC</span><span class="num">12,024 · 10.57% of not-deployed</span></div>
+      <div class="bar-track"><div class="bar-fill fill-mde" style="width:10.57%">12,024</div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-warning)"></span>No MDE on DC</span><span class="num">101,022 · 79.60% of not-deployed</span></div>
-      <div class="bar-track"><div class="bar-fill fill-nomde" style="width:79.60%">101,022</div></div>
+      <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-warning)"></span>No MDE on DC</span><span class="num">90,844 · 79.86% of not-deployed</span></div>
+      <div class="bar-track"><div class="bar-fill fill-nomde" style="width:79.86%">90,844</div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-text-soft)"></span>Unmapped (org unknown)</span><span class="num">13,408 · 10.56% of not-deployed</span></div>
-      <div class="bar-track"><div class="bar-fill fill-unmapped" style="width:10.56%">13,408</div></div>
+      <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-text-soft)"></span>Unmapped (org unknown)</span><span class="num">10,893 · 9.58% of not-deployed</span></div>
+      <div class="bar-track"><div class="bar-fill fill-unmapped" style="width:9.58%">10,893</div></div>
     </div>
   </div>
 
@@ -208,12 +208,12 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
         <tr><th>Segment</th><th class="num">Count</th><th class="num">% of Licensed</th><th class="num">% of Not-Deployed</th></tr>
       </thead>
       <tbody>
-        <tr><td><strong>Total MDI Licensed</strong></td><td class="num"><strong>159,599</strong></td><td class="num">100.00%</td><td class="num">—</td></tr>
-        <tr><td>Deployed (MPU &gt; 0)</td><td class="num">32,682</td><td class="num">20.48%</td><td class="num">—</td></tr>
-        <tr><td><strong>Not Deployed</strong></td><td class="num"><strong>126,917</strong></td><td class="num">79.52%</td><td class="num">100.00%</td></tr>
-        <tr class="indent"><td>With MDE on DC</td><td class="num">12,487</td><td class="num">7.82%</td><td class="num">9.84%</td></tr>
-        <tr class="indent"><td>No MDE on DC</td><td class="num">101,022</td><td class="num">63.30%</td><td class="num">79.60%</td></tr>
-        <tr class="indent"><td>Unmapped (org unknown)</td><td class="num">13,408</td><td class="num">8.40%</td><td class="num">10.56%</td></tr>
+        <tr><td><strong>MDI + MDE Licensed</strong></td><td class="num"><strong>144,981</strong></td><td class="num">100.00%</td><td class="num">—</td></tr>
+        <tr><td>Deployed (MPU &gt; 0)</td><td class="num">31,220</td><td class="num">21.53%</td><td class="num">—</td></tr>
+        <tr><td><strong>Not Deployed</strong></td><td class="num"><strong>113,761</strong></td><td class="num">78.47%</td><td class="num">100.00%</td></tr>
+        <tr class="indent"><td>With MDE on DC</td><td class="num">12,024</td><td class="num">8.29%</td><td class="num">10.57%</td></tr>
+        <tr class="indent"><td>No MDE on DC</td><td class="num">90,844</td><td class="num">62.66%</td><td class="num">79.86%</td></tr>
+        <tr class="indent"><td>Unmapped (org unknown)</td><td class="num">10,893</td><td class="num">7.51%</td><td class="num">9.58%</td></tr>
       </tbody>
     </table>
   </div>
@@ -221,12 +221,12 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
   <div class="panel notes">
     <h3>Definitions &amp; caveats</h3>
     <ul>
-      <li><strong>Licensed universe:</strong> any commercial active tenant with a paid MDI seat (<code>AATPPaidAvailableUnits &gt; 0</code>) — M365/A5/EMS E5 etc. This is the full entitlement universe, not the targeted install base, which is why the deployed share is ~20%.</li>
+      <li><strong>Licensed universe:</strong> commercial active tenants with <em>both</em> a paid MDI seat (<code>AATPPaidAvailableUnits &gt; 0</code>) <em>and</em> a paid MDE seat (<code>MDATPPaidAvailableUnits &gt; 0</code>). This is the dual-entitlement universe — tenants that could deploy MDI and already own MDE.</li>
       <li><strong>Deployed:</strong> tenant has any Monthly Protected Users (<code>TotalActiveProtectedUsers &gt; 0</code>) in the rolling 7-day WorkspaceBusinessData feed. Not-deployed includes both "no telemetry row" and "row with MPU = 0".</li>
       <li><strong>MDE on DC:</strong> at least one domain controller (<code>ProductType == 'DomainController'</code>) heartbeating to MDE within the last 15 days. A tenant whose DCs stopped heartbeating &gt;15d ago reads as "No MDE".</li>
       <li><strong>Unmapped:</strong> 13,408 not-deployed tenants (10.6%) could not be resolved from AAD tenant ID to an MDE OrgId, so their MDE-on-DC status is unknown — reported as a separate bucket, <em>not</em> folded into "No MDE".</li>
       <li><strong>Gov excluded:</strong> filtered to <code>TenantCloudType == 'Other'</code> (commercial) plus SKU regex exclusion of DOD/GCC.</li>
-      <li>Numbers reconcile exactly: 32,682 + 126,917 = 159,599; 12,487 + 101,022 + 13,408 = 126,917.</li>
+      <li>Numbers reconcile exactly: 31,220 + 113,761 = 144,981; 12,024 + 90,844 + 10,893 = 113,761.</li>
     </ul>
   </div>
 </div>
