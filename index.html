@@ -158,11 +158,11 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
       <div class="bar-track"><div class="bar-fill fill-total" style="width:100%">144,981</div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name">Deployed (MPU &gt; 0)</span><span class="num">31,220 · 21.53%</span></div>
+      <div class="bar-head"><span class="name">MDI deployed</span><span class="num">31,220 · 21.53%</span></div>
       <div class="bar-track"><div class="bar-fill fill-deployed" style="width:21.53%">31,220</div></div>
     </div>
     <div class="bar-row">
-      <div class="bar-head"><span class="name">Not Deployed</span><span class="num">113,761 · 78.47%</span></div>
+      <div class="bar-head"><span class="name">Not MDI deployed</span><span class="num">113,761 · 78.47%</span></div>
       <div class="bar-track"><div class="bar-fill fill-notdeployed" style="width:78.47%">113,761</div></div>
     </div>
   </div>
@@ -191,8 +191,8 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
       </thead>
       <tbody>
         <tr><td><strong>MDI + MDE Licensed</strong></td><td class="num"><strong>144,981</strong></td><td class="num">100.00%</td><td class="num">—</td></tr>
-        <tr><td>Deployed (MPU &gt; 0)</td><td class="num">31,220</td><td class="num">21.53%</td><td class="num">—</td></tr>
-        <tr><td><strong>Not Deployed</strong></td><td class="num"><strong>113,761</strong></td><td class="num">78.47%</td><td class="num">100.00%</td></tr>
+        <tr><td>MDI deployed</td><td class="num">31,220</td><td class="num">21.53%</td><td class="num">—</td></tr>
+        <tr><td><strong>Not MDI deployed</strong></td><td class="num"><strong>113,761</strong></td><td class="num">78.47%</td><td class="num">100.00%</td></tr>
         <tr class="indent"><td>With MDE on DC</td><td class="num">12,024</td><td class="num">8.29%</td><td class="num">10.57%</td></tr>
         <tr class="indent"><td>No MDE on DC</td><td class="num">90,844</td><td class="num">62.66%</td><td class="num">79.86%</td></tr>
         <tr class="indent"><td>Unmapped (org unknown)</td><td class="num">10,893</td><td class="num">7.51%</td><td class="num">9.58%</td></tr>
@@ -206,7 +206,7 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
       <li><strong>Licensed universe:</strong> commercial active tenants with <em>both</em> a paid MDI seat (<code>AATPPaidAvailableUnits &gt; 0</code>) <em>and</em> a paid MDE seat (<code>MDATPPaidAvailableUnits &gt; 0</code>). This is the dual-entitlement universe — tenants that could deploy MDI and already own MDE.</li>
       <li><strong>Deployed:</strong> tenant has any Monthly Protected Users (<code>TotalActiveProtectedUsers &gt; 0</code>) in the rolling 7-day WorkspaceBusinessData feed. Not-deployed includes both "no telemetry row" and "row with MPU = 0".</li>
       <li><strong>MDE on DC:</strong> at least one domain controller (<code>ProductType == 'DomainController'</code>) heartbeating to MDE within the last 15 days. A tenant whose DCs stopped heartbeating &gt;15d ago reads as "No MDE".</li>
-      <li><strong>Unmapped:</strong> 13,408 not-deployed tenants (10.6%) could not be resolved from AAD tenant ID to an MDE OrgId, so their MDE-on-DC status is unknown — reported as a separate bucket, <em>not</em> folded into "No MDE".</li>
+      <li><strong>Unmapped:</strong> 10,893 not-MDI-deployed tenants (9.58%) could not be resolved from AAD tenant ID to an MDE OrgId, so their MDE-on-DC status is unknown — reported as a separate bucket, <em>not</em> folded into "No MDE".</li>
       <li><strong>Gov excluded:</strong> filtered to <code>TenantCloudType == 'Other'</code> (commercial) plus SKU regex exclusion of DOD/GCC.</li>
       <li>Numbers reconcile exactly: 31,220 + 113,761 = 144,981; 12,024 + 90,844 + 10,893 = 113,761.</li>
     </ul>
