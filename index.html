@@ -117,6 +117,8 @@ h1 { font-size: 1.9rem; font-weight: 650; letter-spacing: -0.02em; }
 .fill-mde { background: var(--cp-link); }
 .fill-nomde { background: var(--cp-warning); color: #1a1a1a; }
 .fill-unmapped { background: var(--cp-text-soft); }
+.fill-infra { background: var(--cp-accent); }
+.fill-noinfra { background: var(--cp-text-soft); }
 
 /* Breakdown grid */
 .split { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
@@ -148,7 +150,7 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
   <header>
     <h1>MDI Deployment Funnel <span class="badge">MDI + MDE licensed · Commercial · Gov excluded</span></h1>
     <p class="subtitle">Of customers licensed for <strong>both MDI and MDE</strong> — how many are deployed vs not, and among not-deployed, who already has MDE on their domain controllers.</p>
-    <p class="asof">Data as of latest daily snapshot · Licensed = MDI PAU&nbsp;&gt;&nbsp;0 <strong>and</strong> MDE PAU&nbsp;&gt;&nbsp;0 · Deployed = MPU&nbsp;&gt;&nbsp;0 · DC machines = MDE-onboarded domain controllers (15-day heartbeat window) · Total MDI PAU = sum of AATP paid available units</p>
+    <p class="asof">Data as of latest daily snapshot · Licensed = MDI PAU&nbsp;&gt;&nbsp;0 <strong>and</strong> MDE PAU&nbsp;&gt;&nbsp;0 · Deployed = MPU&nbsp;&gt;&nbsp;0 · DC machines = MDE-onboarded domain controllers (15-day heartbeat window) · Identity infra = MDE-onboarded AD FS / AD CS / Entra Connect servers (DeviceInfoEvents.DeviceRoles, 15-day window) · Total MDI PAU = sum of AATP paid available units</p>
   </header>
 
   <div class="panel">
@@ -178,6 +180,18 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
       <div class="bar-track"><div class="bar-fill fill-nomde" style="width:89.43%">101,735</div></div>
     </div>
   </div>
+  </div>
+
+  <div class="panel">
+  <div class="section-title">No-MDE-on-DC breakdown — any MDE on identity infra (AD FS / AD CS / Entra Connect)?</div>
+  <div class="bar-row">
+    <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-accent)"></span>MDE on AD FS / AD CS / EC</span><span class="num">998 tenants · 1,238,114 MDI PAU · 0.98% of no-MDE-on-DC</span></div>
+    <div class="bar-track"><div class="bar-fill fill-infra" style="width:0.98%;min-width:56px">998</div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-head"><span class="name"><span class="legend-dot" style="background:var(--cp-text-soft)"></span>No MDE on identity infra</span><span class="num">100,737 tenants · 27,059,042 MDI PAU · 99.02% of no-MDE-on-DC</span></div>
+    <div class="bar-track"><div class="bar-fill fill-noinfra" style="width:99.02%">100,737</div></div>
+  </div>
 
   <div class="panel">
     <div class="section-title">Full numbers</div>
@@ -191,6 +205,8 @@ code { font-family: Consolas, "Courier New", Courier, monospace; background: var
         <tr><td><strong>Not MDI deployed</strong></td><td class="num"><strong>113,758</strong></td><td class="num"><strong>42,716,669</strong></td><td class="num"><strong>57,316</strong></td><td class="num">78.46%</td><td class="num">100.00%</td></tr>
         <tr class="indent"><td>With MDE on DC</td><td class="num">12,023</td><td class="num">14,419,513</td><td class="num">57,316</td><td class="num">8.29%</td><td class="num">10.57%</td></tr>
         <tr class="indent"><td>No MDE on DC</td><td class="num">101,735</td><td class="num">28,297,156</td><td class="num">N/A</td><td class="num">70.17%</td><td class="num">89.43%</td></tr>
+        <tr class="indent"><td>&nbsp;&nbsp;└ MDE on AD FS / AD CS / EC</td><td class="num">998</td><td class="num">1,238,114</td><td class="num">N/A</td><td class="num">0.69%</td><td class="num">0.88%</td></tr>
+        <tr class="indent"><td>&nbsp;&nbsp;└ No MDE on identity infra</td><td class="num">100,737</td><td class="num">27,059,042</td><td class="num">N/A</td><td class="num">69.48%</td><td class="num">88.55%</td></tr>
       </tbody>
     </table>
   </div>
